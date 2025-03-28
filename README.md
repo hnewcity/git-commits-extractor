@@ -11,7 +11,7 @@
 ## 安装
 
 ```bash
-pip install git-commits-extractor
+sudo mv git-commits-extractor /usr/local/bin/
 ```
 
 ## 使用方法
@@ -31,6 +31,7 @@ python -m src.git_commits_extractor.main --repo-path /path/to/your/repo --since 
 - `--repo-path`: 指定 Git 仓库的路径，默认为当前工作目录。
 - `--since`: 可选参数，指定提取从该日期之后的提交记录，格式为 `YYYY-MM-DD`。
 - `--format`: 输出格式，支持 `table` 或 `list`，默认为 `table`。
+- `--extract-tasks`: 从提交信息中总结提取任务列表
 
 ## 贡献
 
