@@ -24,7 +24,7 @@ def build_executable():
             [
                 "--onefile",  # 生成单个可执行文件
                 "--name",
-                "git_commits_extractor",
+                "git-commits-extractor",
                 "--distpath",
                 dist_path,
                 # macOS特定选项
@@ -47,7 +47,7 @@ def build_executable():
             [
                 "--onefile",
                 "--name",
-                "git_commits_extractor",
+                "git-commits-extractor",
                 "--distpath",
                 dist_path,
             ]
@@ -64,7 +64,7 @@ def build_executable():
         if platform.system() == "Darwin":
             print("macOS可执行文件已创建。")
             # 设置可执行权限
-            executable_path = os.path.join(dist_path, "git_commits_extractor")
+            executable_path = os.path.join(dist_path, "git-commits-extractor")
             if os.path.exists(executable_path):
                 os.chmod(executable_path, 0o755)
                 print(f"已设置可执行权限: {executable_path}")

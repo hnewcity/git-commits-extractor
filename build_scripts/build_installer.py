@@ -10,7 +10,7 @@ def create_installer():
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
     # 设置安装包的名称和版本
-    package_name = "git_commits_extractor"
+    package_name = "git-commits-extractor"
     version = "0.1.0"
 
     # 使用 PyInstaller 创建可执行文件
