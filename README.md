@@ -22,10 +22,10 @@ git-commits-extractor --help
 
 ## 使用
 
-在命令行中运行以下命令来提取 Git 提交记录：
+在仓库目录下命令行中运行以下命令来提取 Git 提交记录：
 
 ```bash
-python -m src.git_commits_extractor.main --repo-path /path/to/your/repo --since YYYY-MM-DD --format table
+git-commits-extractor --since YYYY-MM-DD --extract-tasks
 ```
 
 - `--repo-path`: 指定 Git 仓库的路径，默认为当前工作目录。
