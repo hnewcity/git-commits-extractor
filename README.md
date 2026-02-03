@@ -1,42 +1,93 @@
 # Git Commits Extractor
 
-一个用于提取和显示Git提交记录的工具。
+> Extract your Git commits and let AI summarize what you've been working on.
 
-## 功能
+[中文](#中文) | [English](#english)
 
-- 提取指定日期之后的 Git 提交记录
-- 支持以表格或列表形式展示提交记录
-- 自动识别当前用户的 Git 配置
+---
 
-## 安装
+## 中文
 
-```bash
-sudo mv git-commits-extractor /usr/local/bin/
-```
+从 Git 仓库提取提交记录，并使用 AI 自动生成任务总结。适合写周报、复盘工作内容。
 
-## 使用方法
+### 快速开始
 
 ```bash
-git-commits-extractor --help
+# 安装
+pip install git-commits-extractor
+
+# 查看本周提交
+git-commits-extractor --since 2025-01-27
+
+# 让 AI 帮你总结任务
+git-commits-extractor --since 2025-01-01 --extract-tasks
 ```
 
-## 使用
+### 主要功能
 
-在仓库目录下命令行中运行以下命令来提取 Git 提交记录：
+| 功能 | 说明 |
+|------|------|
+| 提交提取 | 按日期筛选，自动过滤当前用户的提交 |
+| 多种格式 | 表格 `table` 或列表 `list` 展示 |
+| AI 总结 | 调用 OpenAI 分析提交，提取任务清单 |
+
+### 参数说明
 
 ```bash
-git-commits-extractor --since YYYY-MM-DD --extract-tasks
+git-commits-extractor [OPTIONS]
+
+--repo-path PATH      # 仓库路径，默认当前目录
+--since YYYY-MM-DD    # 起始日期
+--format table|list   # 输出格式，默认 table
+--extract-tasks       # 启用 AI 任务提取
+--openai-api-key KEY  # OpenAI API 密钥（或设置环境变量 OPENAI_API_KEY）
+--model MODEL         # 模型名称，默认 gpt-4o-mini
 ```
 
-- `--repo-path`: 指定 Git 仓库的路径，默认为当前工作目录。
-- `--since`: 可选参数，指定提取从该日期之后的提交记录，格式为 `YYYY-MM-DD`。
-- `--format`: 输出格式，支持 `table` 或 `list`，默认为 `table`。
-- `--extract-tasks`: 从提交信息中总结提取任务列表
+### 许可证
 
-## 贡献
+MIT
 
-欢迎提交问题和功能请求，或直接提交代码贡献。
+---
 
-## 许可证
+## English
 
-该项目采用 MIT 许可证，详细信息请参阅 LICENSE 文件。
+Extract Git commits and let AI summarize your work. Perfect for writing weekly reports or reviewing what you've accomplished.
+
+### Quick Start
+
+```bash
+# Install
+pip install git-commits-extractor
+
+# View this week's commits
+git-commits-extractor --since 2025-01-27
+
+# Let AI summarize your tasks
+git-commits-extractor --since 2025-01-01 --extract-tasks
+```
+
+### Features
+
+| Feature | Description |
+|---------|-------------|
+| Commit Extraction | Filter by date, auto-filter by current Git user |
+| Multiple Formats | Display as `table` or `list` |
+| AI Summary | Use OpenAI to analyze commits and extract task list |
+
+### Options
+
+```bash
+git-commits-extractor [OPTIONS]
+
+--repo-path PATH      # Repository path, defaults to current directory
+--since YYYY-MM-DD    # Start date filter
+--format table|list   # Output format, defaults to table
+--extract-tasks       # Enable AI task extraction
+--openai-api-key KEY  # OpenAI API key (or set OPENAI_API_KEY env var)
+--model MODEL         # Model name, defaults to gpt-4o-mini
+```
+
+### License
+
+MIT
